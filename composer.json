@@ -11,6 +11,7 @@
         }
     ],
     "require": {
+		"php": ">=5.4.0",
         "newerton/jquery-mousewheel": "dev-master",
         "newerton/fancy-box": "dev-master"
     },
