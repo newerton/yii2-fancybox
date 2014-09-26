@@ -76,16 +76,16 @@ class FancyBox extends Widget {
         $assets = FancyBoxAsset::register($view);
 
         if ($this->mouse) {
-            $view->registerJsFile('@web/vendor/newerton/jquery-mousewheel/jquery.mousewheel' . (!YII_DEBUG ? '.min' : '') . '.js', [\newerton\fancybox\FancyBoxAsset::className()]);
+            $view->registerJsFile('@web/vendor/newerton/jquery-mousewheel/jquery.mousewheel' . (!YII_DEBUG ? '.min' : '') . '.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
         }
 
         if ($this->helpers) {
-            $view->registerCssFile($assets->baseUrl . '/helpers/jquery.fancybox-buttons.css', [\newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerCssFile($assets->baseUrl . '/helpers/jquery.fancybox-thumbs.css', [\newerton\fancybox\FancyBoxAsset::className()]);
+            $view->registerCssFile($assets->baseUrl . '/helpers/jquery.fancybox-buttons.css', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
+            $view->registerCssFile($assets->baseUrl . '/helpers/jquery.fancybox-thumbs.css', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
 
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-buttons.js', [\newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-media.js', [\newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-thumbs.js', [\newerton\fancybox\FancyBoxAsset::className()]);
+            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-buttons.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
+            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-media.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
+            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-thumbs.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
         }
     }
 
