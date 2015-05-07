@@ -76,7 +76,7 @@ class FancyBox extends Widget {
         $assets = FancyBoxAsset::register($view);
 
         if ($this->mouse) {
-            $view->registerJsFile('@web/vendor/newerton/jquery-mousewheel/jquery.mousewheel' . (!YII_DEBUG ? '.min' : '') . '.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
+            MousewheelAsset::register($view);
         }
 
         if ($this->helpers) {
