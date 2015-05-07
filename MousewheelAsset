@@ -19,6 +19,7 @@ class MousewheelAsset extends AssetBundle
 
     public $depends = [
         'yii\web\JqueryAsset',
+        'newerton\fancybox\FancyBoxAsset',
     ];
 
     public function registerAssetFiles($view) {
