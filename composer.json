@@ -13,8 +13,7 @@
     "require": {
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
-        "newerton/jquery-mousewheel": "dev-master",
-        "newerton/fancy-box": "dev-master"
+        "bower-asset/fancybox": "dev-master"
     },
     "autoload": {
         "psr-4": {

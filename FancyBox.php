@@ -61,8 +61,6 @@ class FancyBox extends Widget {
     public function run() {
         $view = $this->getView();
 
-        FancyBoxAsset::register($view);
-
         $config = Json::encode($this->config);
         $view->registerJs("jQuery('{$this->target}').fancybox({$config});");
     }
@@ -73,19 +71,18 @@ class FancyBox extends Widget {
     public function registerClientScript() {
         $view = $this->getView();
 
-        $assets = FancyBoxAsset::register($view);
+         FancyBoxAsset::register($view);
 
         if ($this->mouse) {
             MousewheelAsset::register($view);
         }
 
         if ($this->helpers) {
-            $view->registerCssFile($assets->baseUrl . '/helpers/jquery.fancybox-buttons.css', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerCssFile($assets->baseUrl . '/helpers/jquery.fancybox-thumbs.css', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
-
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-buttons.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-media.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-thumbs.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
+            $view->registerCssFile('fancybox/source/helpers/jquery.fancybox-buttons.css');
+            $view->registerCssFile('fancybox/source/helpers/jquery.fancybox-thumbs.css');
+            $view->registerJsFile('fancybox/source/helpers/jquery.fancybox-buttons.js');
+            $view->registerJsFile('fancybox/source/helpers/jquery.fancybox-media.js');
+            $view->registerJsFile('fancybox/source/helpers/jquery.fancybox-thumbs.js');
         }
     }
 

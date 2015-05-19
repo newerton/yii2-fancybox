@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
 
 class MousewheelAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/newerton/jquery-mousewheel/source/';
+    public $sourcePath = '@bower';
 
     public $js = [];
 
@@ -23,7 +23,7 @@ class MousewheelAsset extends AssetBundle
     ];
 
     public function registerAssetFiles($view) {
-        $this->js[] = 'jquery.mousewheel' . (!YII_DEBUG ? '.min' : '') . '.js';
+        $this->js[] = 'fancybox/lib/jquery.mousewheel' . (!YII_DEBUG ? '.min' : '') . '.js';
         parent::registerAssetFiles($view);
     }
 }
