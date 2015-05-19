@@ -15,7 +15,7 @@ class FancyBoxAsset extends AssetBundle
     public $js = [];
     
     public $css = [
-        'jquery.fancybox.css'
+        'source/jquery.fancybox.css'
     ];
     public $depends = [
         'yii\web\JqueryAsset',
