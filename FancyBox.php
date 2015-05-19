@@ -78,11 +78,11 @@ class FancyBox extends Widget {
         }
 
         if ($this->helpers) {
-            $view->registerCssFile('fancybox/source/helpers/jquery.fancybox-buttons.css');
-            $view->registerCssFile('fancybox/source/helpers/jquery.fancybox-thumbs.css');
-            $view->registerJsFile('fancybox/source/helpers/jquery.fancybox-buttons.js');
-            $view->registerJsFile('fancybox/source/helpers/jquery.fancybox-media.js');
-            $view->registerJsFile('fancybox/source/helpers/jquery.fancybox-thumbs.js');
+            $view->registerCssFile('source/helpers/jquery.fancybox-buttons.css');
+            $view->registerCssFile('source/helpers/jquery.fancybox-thumbs.css');
+            $view->registerJsFile('source/helpers/jquery.fancybox-buttons.js');
+            $view->registerJsFile('source/helpers/jquery.fancybox-media.js');
+            $view->registerJsFile('source/helpers/jquery.fancybox-thumbs.js');
         }
     }
 

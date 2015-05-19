@@ -23,7 +23,7 @@ class MousewheelAsset extends AssetBundle
     ];
 
     public function registerAssetFiles($view) {
-        $this->js[] = 'fancybox/lib/jquery.mousewheel' . (!YII_DEBUG ? '.min' : '') . '.js';
+        $this->js[] = 'lib/jquery.mousewheel' . (!YII_DEBUG ? '.min' : '') . '.js';
         parent::registerAssetFiles($view);
     }
 }

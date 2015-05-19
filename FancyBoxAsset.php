@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
 
 class FancyBoxAsset extends AssetBundle
 {
-    public $sourcePath = '@bower';
+    public $sourcePath = '@bower/fancybox';
 
     public $js = [];
     
@@ -22,7 +22,7 @@ class FancyBoxAsset extends AssetBundle
     ];
     
     public function registerAssetFiles($view) {
-        $this->js[] = 'fancybox/source/jquery.fancybox' . (!YII_DEBUG ? '.pack' : '') . '.js';
+        $this->js[] = 'source/jquery.fancybox' . (!YII_DEBUG ? '.pack' : '') . '.js';
         parent::registerAssetFiles($view);
     }
 } 
