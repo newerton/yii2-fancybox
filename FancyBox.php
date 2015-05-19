@@ -15,7 +15,7 @@ use yii\helpers\Json;
 use yii\base\InvalidConfigException;
 
 /**
- * fancyBox is a tool that offers a nice and elegant way to add zooming 
+ * fancyBox is a tool that offers a nice and elegant way to add zooming
  * functionality for images, html content and multi-media on your webpages
  *
  * @author Newerton Vargas de Araújo <contato@newerton.com.br>
@@ -42,7 +42,12 @@ class FancyBox extends Widget {
      *
      * @var type array of config settings for fancybox
      */
-    public $config = array();
+    public $config = [];
+
+    /**
+     * @var array to use for $.fancybox.open( [group], [options] ) scenario
+     */
+    public $group = [];
 
     /**
      * @inheritdoc
@@ -62,6 +67,10 @@ class FancyBox extends Widget {
         $view = $this->getView();
 
         $config = Json::encode($this->config);
+
+        if(!empty($this->group)){
+            $config = Json::encode($this->group).','.$config;
+        }
         $view->registerJs("jQuery('{$this->target}').fancybox({$config});");
     }
 
