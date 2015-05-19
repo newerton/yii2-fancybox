@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
 
 class MousewheelAsset extends AssetBundle
 {
-    public $sourcePath = '@bower';
+    public $sourcePath = '@bower/fancybox';
 
     public $js = [];
 

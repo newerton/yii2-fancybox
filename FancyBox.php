@@ -71,18 +71,14 @@ class FancyBox extends Widget {
     public function registerClientScript() {
         $view = $this->getView();
 
-         FancyBoxAsset::register($view);
+        FancyBoxAsset::register($view);
 
         if ($this->mouse) {
             MousewheelAsset::register($view);
         }
 
         if ($this->helpers) {
-            $view->registerCssFile('@bower/fancybox/source/helpers/jquery.fancybox-buttons.css');
-            $view->registerCssFile('@bower/fancybox/source/helpers/jquery.fancybox-thumbs.css');
-            $view->registerJsFile('@bower/fancybox/source/helpers/jquery.fancybox-buttons.js');
-            $view->registerJsFile('@bower/fancybox/source/helpers/jquery.fancybox-media.js');
-            $view->registerJsFile('@bower/fancybox/source/helpers/jquery.fancybox-thumbs.js');
+            FancyBoxHelpersAsset::register($view);
         }
     }
 
