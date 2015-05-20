@@ -15,7 +15,7 @@ use yii\helpers\Json;
 use yii\base\InvalidConfigException;
 
 /**
- * fancyBox is a tool that offers a nice and elegant way to add zooming 
+ * fancyBox is a tool that offers a nice and elegant way to add zooming
  * functionality for images, html content and multi-media on your webpages
  *
  * @author Newerton Vargas de Araújo <contato@newerton.com.br>
@@ -42,7 +42,12 @@ class FancyBox extends Widget {
      *
      * @var type array of config settings for fancybox
      */
-    public $config = array();
+    public $config = [];
+
+    /**
+     * @var array to use for $.fancybox.open( [group], [options] ) scenario
+     */
+    public $group = [];
 
     /**
      * @inheritdoc
@@ -61,9 +66,11 @@ class FancyBox extends Widget {
     public function run() {
         $view = $this->getView();
 
-        FancyBoxAsset::register($view);
-
         $config = Json::encode($this->config);
+
+        if(!empty($this->group)){
+            $config = Json::encode($this->group).','.$config;
+        }
         $view->registerJs("jQuery('{$this->target}').fancybox({$config});");
     }
 
@@ -73,19 +80,14 @@ class FancyBox extends Widget {
     public function registerClientScript() {
         $view = $this->getView();
 
-        $assets = FancyBoxAsset::register($view);
+        FancyBoxAsset::register($view);
 
         if ($this->mouse) {
             MousewheelAsset::register($view);
         }
 
         if ($this->helpers) {
-            $view->registerCssFile($assets->baseUrl . '/helpers/jquery.fancybox-buttons.css', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerCssFile($assets->baseUrl . '/helpers/jquery.fancybox-thumbs.css', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
-
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-buttons.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-media.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
-            $view->registerJsFile($assets->baseUrl . '/helpers/jquery.fancybox-thumbs.js', ['depends' => \newerton\fancybox\FancyBoxAsset::className()]);
+            FancyBoxHelpersAsset::register($view);
         }
     }
 

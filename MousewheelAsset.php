@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
 
 class MousewheelAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/newerton/jquery-mousewheel/source/';
+    public $sourcePath = '@bower/jquery-mousewheel';
 
     public $js = [];
 
