@@ -13,7 +13,7 @@
     "require": {
 	"php": ">=5.4.0",
 	"yiisoft/yii2": "*",
-        "bower-asset/fancybox": "*",
+        "bower-asset/fancybox": "~2.1.5",
         "bower-asset/jquery-mousewheel": "*"
     },
     "autoload": {
