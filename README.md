@@ -1,3 +1,8 @@
+PHP version
+===========
+This is a fork from https://github.com/newerton/yii2-fancybox but with
+ compatibility with php 5.5
+
 yii2-fancybox
 =============
 
