@@ -22,12 +22,9 @@ class FancyBoxAsset extends AssetBundle
         'yii\web\JqueryAsset',
     ];
 
-    public function init()
-    {
-        $this->js = [
-            'source/jquery.fancybox' . (!YII_DEBUG ? '.pack' : '') . '.js'
-        ];
-        parent::init();
+    public function registerAssetFiles($view) {
+        $this->js[] = 'jquery.fancybox' . (!YII_DEBUG ? '.pack' : '') . '.js';
+        parent::registerAssetFiles($view);
     }
 
 
