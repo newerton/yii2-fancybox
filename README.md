@@ -12,6 +12,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
+php composer.phar global require "fxp/composer-asset-plugin:^1.2.0"
 php composer.phar require --prefer-dist newerton/yii2-fancybox "dev-master"
 ```
 
