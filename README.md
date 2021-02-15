@@ -12,13 +12,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist newerton/yii2-fancybox "dev-master"
+php composer.phar require newerton/yii2-fancybox
 ```
 
 or add
 
 ```
-"newerton/yii2-fancybox": "dev-master"
+"newerton/yii2-fancybox": "^1.0"
 ```
 
 to the require section of your `composer.json` file.
